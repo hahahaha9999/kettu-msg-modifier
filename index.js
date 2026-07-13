@@ -1,10 +1,11 @@
 import { patcher, metro, storage, components } from "@vendetta";
 const { Forms } = components;
+const { React } = metro.common;
 const FluxDispatcher = metro.common.FluxDispatcher;
 
 storage.targetMessageId ??= "1520914436460904678";
 storage.spoofedText ??= "";
-storage.spoofedDisplayName ??= ".𝚔𝚊𝐳𝚏𝚕𝐚";
+storage.spoofedDisplayName ??= ".𝚔𝚊𝚣𝚏𝚕𝚊";
 storage.spoofedAvatar ??= "https://cdn.discordapp.com/avatars/758731615265357824/d58a1012427825b24816247844152b6a.png";
 
 let patches = [];
@@ -38,11 +39,9 @@ export default {
     onUnload: () => patches.forEach(p => p())
 };
 
-export const settings = () => (
-    <Forms.FormSection title="Spoof Settings">
-        <Forms.FormTextInput title="Target Message ID" value={storage.targetMessageId} onChange={(v) => storage.targetMessageId = v} />
-        <Forms.FormTextInput title="Spoofed Display Name" value={storage.spoofedDisplayName} onChange={(v) => storage.spoofedDisplayName = v} />
-        <Forms.FormTextInput title="Spoofed Text Content" value={storage.spoofedText} onChange={(v) => storage.spoofedText = v} />
-        <Forms.FormTextInput title="Avatar URL" value={storage.spoofedAvatar} onChange={(v) => storage.spoofedAvatar = v} />
-    </Forms.FormSection>
+export const settings = () => React.createElement(Forms.FormSection, { title: "Spoof Settings" },
+    React.createElement(Forms.FormTextInput, { title: "Target Message ID", value: storage.targetMessageId, onChange: (v) => storage.targetMessageId = v }),
+    React.createElement(Forms.FormTextInput, { title: "Spoofed Display Name", value: storage.spoofedDisplayName, onChange: (v) => storage.spoofedDisplayName = v }),
+    React.createElement(Forms.FormTextInput, { title: "Spoofed Text Content", value: storage.spoofedText, onChange: (v) => storage.spoofedText = v }),
+    React.createElement(Forms.FormTextInput, { title: "Avatar URL", value: storage.spoofedAvatar, onChange: (v) => storage.spoofedAvatar = v })
 );
