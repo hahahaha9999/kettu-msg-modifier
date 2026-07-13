@@ -1,0 +1,8 @@
+{
+    "name": "LocalMessageModifier",
+    "description": "Flux Pipeline Interceptor with UI-based property injection.",
+    "author": "kazfla",
+    "version": "1.7.6",
+    "main": "index.js",
+    "hash": "auto"
+}
