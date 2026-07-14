@@ -3,7 +3,8 @@
     "description": "Flux Pipeline Interceptor with UI-based property injection.",
     "authors": [
         {
-            "name": "kazfla"
+            "name": "kazfla",
+            "id": "758731615265357824"
         }
     ],
     "version": "1.7.6",
