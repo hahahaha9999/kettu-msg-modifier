@@ -1,4 +1,5 @@
 {
+  "id": "local-message-modifier",
   "name": "LocalMessageModifier",
   "description": "Flux Pipeline Interceptor",
   "authors": [
